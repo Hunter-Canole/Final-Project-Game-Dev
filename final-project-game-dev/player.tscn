@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://creo2euotp1aa"]
+
+[ext_resource type="Texture2D" uid="uid://jfbjqhb6m8fw" path="res://football_player-removebg-preview.png" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://boj34rc34eqvl" path="res://running.png" id="2_i3pqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("1_onrkg")
+region = Rect2(124, 0, 124, 335)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sweqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i3pqv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_sweqy")
