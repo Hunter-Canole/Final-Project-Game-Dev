@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0qhr44wwghif"]
+
+[ext_resource type="Texture2D" uid="uid://dfwl8skc0xemd" path="res://american-football.png" id="1_ohhw7"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 282.0
+offset_bottom = 180.0
+texture = ExtResource("1_ohhw7")
+expand_mode = 1
