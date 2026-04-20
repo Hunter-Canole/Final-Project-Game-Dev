@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dstx2enqctgd1"]
+[gd_scene load_steps=7 format=3 uid="uid://dstx2enqctgd1"]
 
+[ext_resource type="Script" uid="uid://b13541eerfh64" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://dff5vmg1m78vm" path="res://soccer_tiles.png" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://creo2euotp1aa" path="res://player.tscn" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://3hmenitkbw25" path="res://defense.tscn" id="3_tlwt5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -21,11 +23,19 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_fj7yv")
 
 [node name="World" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_fj7yv")]
+script = ExtResource("1_aqk2v")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tlwt5")
 rendering_quadrant_size = 64
 format = 2
 layer_0/tile_data = PackedInt32Array(393212, 0, 0, 393213, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 327689, 0, 1, 262154, 0, 1, 196619, 0, 1, 196620, 65536, 0, 131084, 0, 1, 262155, 65536, 0, 327690, 65536, 0, 327691, 65536, 0, 262156, 65536, 0, 327692, 65536, 0)
+
+[node name="defense" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(423, 321)
+
+[node name="Player" parent="." instance=ExtResource("1_fj7yv")]
+position = Vector2(133, 96)
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-61, 195)

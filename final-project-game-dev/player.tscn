@@ -48,7 +48,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
 radius = 114.0
-height = 550.0
+height = 496.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.25, 0.25)
@@ -59,13 +59,10 @@ position = Vector2(-99, 8)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_sweqy")
 animation = &"Run"
-<<<<<<< Updated upstream
-=======
 frame_progress = 0.291764
->>>>>>> Stashed changes
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-90, -9)
+position = Vector2(-92, 28)
 shape = SubResource("CapsuleShape2D_1jxqw")
 
 [node name="WileTimer" type="Timer" parent="."]

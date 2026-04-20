@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var SPEED = 300.0
-@export var JUMP_VELOCITY = -400.0
+@export var JUMP_VELOCITY = -600.0
 @export var MAX_COYOTE_FRAMES = 100.0
 @export var timer_delay = 0.5
 @export var MAX_INPUT_BUFFER_FRAMES = 100
@@ -40,23 +40,22 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") or input_buffer_frames > 0:
 		if is_jumping == false and not believe_in_gravity:
-		#coyote_frames < MAX_COYOTE_FRAMES:
 			velocity.y = JUMP_VELOCITY
 			is_jumping = true
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
-		velocity.x = move_toward(velocity.x, direction * SPEED, 0.05*SPEED)
-		$AnimatedSprite2D.animation = 'Run'
-		$AnimatedSprite2D.flip_h = velocity.x < 0
+		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		$AnimatedSprite2D.animation = 'Idle'
-	
+		velocity.x = 0
 	if not is_on_floor():
-		$AnimatedSprite2D.animation = 'Hurdle'
+		$AnimatedSprite2D.play("Hurdle")
+	elif direction:
+		$AnimatedSprite2D.play("Run")
+		$AnimatedSprite2D.flip_h = direction < 0
+	else:
+		$AnimatedSprite2D.play("Idle")
+
 	move_and_slide()
 
 func ow():
