@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dstx2enqctgd1"]
+[gd_scene load_steps=6 format=3 uid="uid://dstx2enqctgd1"]
 
 [ext_resource type="Texture2D" uid="uid://dff5vmg1m78vm" path="res://soccer_tiles.png" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://gegxbhrr1fcw" path="res://Stands1.png" id="2_tlwt5"]
+[ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="3_aqk2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -20,3 +22,31 @@ sources/0 = SubResource("TileSetAtlasSource_fj7yv")
 tile_set = SubResource("TileSet_tlwt5")
 rendering_quadrant_size = 64
 format = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background"]
+
+[node name="TextureRect" type="TextureRect" parent="Background/Parallax2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Stands1" type="Sprite2D" parent="Background/Parallax2D/TextureRect"]
+position = Vector2(163, 202)
+texture = ExtResource("2_tlwt5")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+texture_repeat = 2
+repeat_size = Vector2(540, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
+texture_repeat = 2
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Stands2" type="Sprite2D" parent="Parallax2D/TextureRect"]
+texture_repeat = 2
+position = Vector2(600, 200)
+texture = ExtResource("3_aqk2v")
