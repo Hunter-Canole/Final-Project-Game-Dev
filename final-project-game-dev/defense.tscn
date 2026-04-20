@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://3hmenitkbw25"]
+[gd_scene load_steps=9 format=3 uid="uid://3hmenitkbw25"]
 
 [ext_resource type="Script" uid="uid://bl08thffajfby" path="res://defense.gd" id="1_b1r40"]
 [ext_resource type="Texture2D" uid="uid://08g4mvu03n1k" path="res://defense.png" id="1_p2qeu"]
@@ -44,16 +44,19 @@ size = Vector2(414, 464)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4un6"]
 size = Vector2(411, 2080)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1r40"]
+size = Vector2(563, 203)
+
 [node name="defense" type="CharacterBody2D"]
 script = ExtResource("1_b1r40")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_feujx")
-animation = &"diving"
+animation = &"dead"
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox_Normal" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_Normal"]
 position = Vector2(13, -3)
 shape = SubResource("RectangleShape2D_l8iht")
 
@@ -65,5 +68,12 @@ position = Vector2(9.5, -859)
 shape = SubResource("RectangleShape2D_t4un6")
 debug_color = Color(0.8479224, 0.3725553, 0.13136211, 0.41960785)
 
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[node name="Hitbox_Diving" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_Diving"]
+position = Vector2(3.5, -7.5)
+shape = SubResource("RectangleShape2D_b1r40")
+debug_color = Color(0.9342178, 2.2717715e-05, 0.64352536, 0.41960785)
+
+[connection signal="body_entered" from="Hitbox_Normal" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
