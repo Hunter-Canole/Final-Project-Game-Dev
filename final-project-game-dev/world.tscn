@@ -1,18 +1,11 @@
-<<<<<<< HEAD
-[gd_scene load_steps=6 format=3 uid="uid://dstx2enqctgd1"]
-=======
-[gd_scene load_steps=7 format=3 uid="uid://dstx2enqctgd1"]
->>>>>>> 25daf512edfb2e5f99960ef766e7b078e15b3553
+[gd_scene load_steps=9 format=3 uid="uid://b27434urr420d"]
 
-[ext_resource type="Script" uid="uid://b13541eerfh64" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="Script" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://dff5vmg1m78vm" path="res://soccer_tiles.png" id="1_f3sb7"]
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://gegxbhrr1fcw" path="res://Stands1.png" id="2_tlwt5"]
-[ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="3_aqk2v"]
-=======
 [ext_resource type="PackedScene" uid="uid://creo2euotp1aa" path="res://player.tscn" id="1_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://3hmenitkbw25" path="res://defense.tscn" id="3_tlwt5"]
->>>>>>> 25daf512edfb2e5f99960ef766e7b078e15b3553
+[ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="2_dwbse"]
+[ext_resource type="Texture2D" uid="uid://gegxbhrr1fcw" path="res://Stands1.png" id="3_pkg7o"]
+[ext_resource type="PackedScene" path="res://defense.tscn" id="3_tlwt5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -34,40 +27,30 @@ sources/0 = SubResource("TileSetAtlasSource_fj7yv")
 [node name="World" type="Node2D"]
 script = ExtResource("1_aqk2v")
 
+[node name="Parallax2D_background" type="Parallax2D" parent="."]
+texture_repeat = 2
+repeat_size = Vector2(560, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D_background"]
+texture_repeat = 2
+offset_left = 308.0
+offset_top = 3.0
+offset_right = 868.0
+offset_bottom = 407.0
+texture = ExtResource("2_dwbse")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
+offset_left = -8.0
+offset_right = 333.0
+offset_bottom = 413.0
+texture = ExtResource("3_pkg7o")
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_tlwt5")
 rendering_quadrant_size = 64
 format = 2
-<<<<<<< HEAD
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Background" type="Node2D" parent="."]
-
-[node name="Parallax2D" type="Parallax2D" parent="Background"]
-
-[node name="TextureRect" type="TextureRect" parent="Background/Parallax2D"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Stands1" type="Sprite2D" parent="Background/Parallax2D/TextureRect"]
-position = Vector2(163, 202)
-texture = ExtResource("2_tlwt5")
-
-[node name="Parallax2D" type="Parallax2D" parent="."]
-texture_repeat = 2
-repeat_size = Vector2(540, 0)
-
-[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
-texture_repeat = 2
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Stands2" type="Sprite2D" parent="Parallax2D/TextureRect"]
-texture_repeat = 2
-position = Vector2(600, 200)
-texture = ExtResource("3_aqk2v")
-=======
 layer_0/tile_data = PackedInt32Array(393212, 0, 0, 393213, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 327689, 0, 1, 262154, 0, 1, 196619, 0, 1, 196620, 65536, 0, 131084, 0, 1, 262155, 65536, 0, 327690, 65536, 0, 327691, 65536, 0, 262156, 65536, 0, 327692, 65536, 0)
 
 [node name="defense" parent="." instance=ExtResource("3_tlwt5")]
@@ -78,4 +61,3 @@ position = Vector2(133, 96)
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(-61, 195)
->>>>>>> 25daf512edfb2e5f99960ef766e7b078e15b3553
