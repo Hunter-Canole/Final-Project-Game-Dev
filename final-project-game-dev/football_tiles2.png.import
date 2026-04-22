@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dff5vmg1m78vm"
-path="res://.godot/imported/soccer_tiles.png-835da39e87590e5c7f7fa5b1b4ea65fb.ctex"
+uid="uid://qul5djchsngr"
+path="res://.godot/imported/football_tiles2.png-2b92f745e1d35625c41dbb3052c4d368.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://soccer_tiles.png"
-dest_files=["res://.godot/imported/soccer_tiles.png-835da39e87590e5c7f7fa5b1b4ea65fb.ctex"]
+source_file="res://football_tiles2.png"
+dest_files=["res://.godot/imported/football_tiles2.png-2b92f745e1d35625c41dbb3052c4d368.ctex"]
 
 [params]
 
