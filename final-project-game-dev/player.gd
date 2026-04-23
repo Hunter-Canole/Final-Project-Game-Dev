@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export var SPEED = 300.0
-@export var JUMP_VELOCITY = -700.0
+@export var JUMP_VELOCITY = -550.0
 @export var MAX_COYOTE_FRAMES = 100.0
 @export var timer_delay = 0.5
 @export var MAX_INPUT_BUFFER_FRAMES = 100
@@ -50,6 +50,7 @@ func _physics_process(delta):
 		velocity.x = 0
 	if not is_on_floor():
 		$AnimatedSprite2D.play("Hurdle")
+		$AnimatedSprite2D.flip_h = direction < 0
 	elif direction:
 		$AnimatedSprite2D.play("Run")
 		$AnimatedSprite2D.flip_h = direction < 0
