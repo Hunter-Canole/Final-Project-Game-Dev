@@ -1,14 +1,40 @@
 extends Node2D
 
-
+var lives
+var can_be_hit = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
+	$Player.set_physics_process(false)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+func game_over() -> void:
+	$Player.set_physics_process(false)
+	$Player/AnimatedSprite2D.stop()
+	$HUD/Lives.visible = false
+	$HUD.show_game_over()
+	
+func new_game():
+	lives = 3
+	$Player.set_physics_process(true)
+	can_be_hit = true
+	$HUD/Lives.visible = true
+	$HUD/Lives.text = "Lives: " + str(lives)
+	$Player.position = $PlayerSpawn.position
+	get_tree().call_group("defense", "queue_free")
+
 
 func _on_defense_hit_player() -> void:
+	if not can_be_hit:
+		return 
+	can_be_hit = false
+	lives -= 1
+	$HUD/Lives.text = "Lives: " + str(lives)
 	$Player.position = $PlayerSpawn.position
+	if lives <= 0:
+		game_over()
+	else:
+		await get_tree().create_timer(0.2).timeout
+		can_be_hit = true
+func _on_hud_start_game() -> void:
+	new_game()

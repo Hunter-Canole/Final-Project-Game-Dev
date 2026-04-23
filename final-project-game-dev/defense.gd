@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 signal hit_player
-
+var starting_position : Vector2
 
 func _ready():
+	starting_position = global_position
 	$AnimatedSprite2D.animation = "idle"
 	$AnimatedSprite2D.play()
 	$Hitbox_Diving/CollisionShape2D.set_deferred("disabled", true)
@@ -16,10 +17,24 @@ func _physics_process(delta: float) -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	hit_player.emit()
-	
+	global_position = starting_position
+	$AnimatedSprite2D.animation = "idle"
+	$AnimatedSprite2D.play()
+	$Hurtbox/CollisionShape2D.set_deferred("disabled", false)
+	$Hitbox_Normal/CollisionShape2D.set_deferred("disabled", false)
+	$CollisionShape2D.set_deferred("disabled", false)
+	$CollisionShape2Diving.set_deferred("disabled", true)
+	$Hitbox_Diving/CollisionShape2D.set_deferred("disabled", true)
 func _on_hitbox_diving_body_entered(body: Node2D) -> void:
 	hit_player.emit()
-
+	global_position = starting_position
+	$AnimatedSprite2D.animation = "idle"
+	$AnimatedSprite2D.play()
+	$Hurtbox/CollisionShape2D.set_deferred("disabled", false)
+	$Hitbox_Normal/CollisionShape2D.set_deferred("disabled", false)
+	$CollisionShape2D.set_deferred("disabled", false)
+	$CollisionShape2Diving.set_deferred("disabled", true)
+	$Hitbox_Diving/CollisionShape2D.set_deferred("disabled", true)
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	$Hurtbox/CollisionShape2D.set_deferred("disabled", true)

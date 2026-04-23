@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch8m8q3r5ee4i"]
+
+[ext_resource type="FontFile" uid="uid://vl7ms8l48x3o" path="res://Xolonium-Regular.ttf" id="1_37p78"]
+[ext_resource type="Script" uid="uid://mj7r8n0ofqgg" path="res://hud.gd" id="1_64ctp"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_64ctp")
+
+[node name="Message" type="Label" parent="."]
+offset_left = 86.0
+offset_top = 159.0
+offset_right = 1393.0
+offset_bottom = 346.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 100
+text = "Cool Football Game"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 318.0
+offset_top = 291.0
+offset_right = 841.0
+offset_bottom = 386.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="Lives" type="Label" parent="."]
+offset_left = 945.0
+offset_top = 3.0
+offset_right = 1152.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 50
+text = "
+"
+
+[node name="Loser" type="Label" parent="."]
+offset_left = 329.0
+offset_top = 157.0
+offset_right = 1355.0
+offset_bottom = 277.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 100
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
