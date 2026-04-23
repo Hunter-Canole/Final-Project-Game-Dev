@@ -42,10 +42,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8iht"]
-size = Vector2(414, 464)
+size = Vector2(392, 453)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4un6"]
-size = Vector2(160, 2080)
+size = Vector2(40, 2080)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1r40"]
 size = Vector2(552, 203)
@@ -69,14 +69,14 @@ animation = &"dead"
 [node name="Hitbox_Normal" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_Normal"]
-position = Vector2(13, -3)
+position = Vector2(4, 2.5)
 shape = SubResource("RectangleShape2D_l8iht")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 position = Vector2(0, -436)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(48, -852)
+position = Vector2(-4, -900)
 shape = SubResource("RectangleShape2D_t4un6")
 debug_color = Color(0.8479224, 0.3725553, 0.13136211, 0.41960785)
 
@@ -92,7 +92,6 @@ debug_color = Color(0.9342178, 2.2717715e-05, 0.64352536, 0.41960785)
 position = Vector2(-10, -10)
 shape = SubResource("RectangleShape2D_ko58k")
 
-[connection signal="hit_player" from="." to="." method="_on_hit_player"]
 [connection signal="body_entered" from="Hitbox_Normal" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="Hitbox_Diving" to="." method="_on_hitbox_diving_body_entered"]

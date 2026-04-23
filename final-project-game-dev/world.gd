@@ -9,7 +9,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func _on_enemy_hit_player() -> void:
-	print("RECEIVED SIGNAL")
+
+func _on_defense_hit_player() -> void:
 	$Player.position = $PlayerSpawn.position
