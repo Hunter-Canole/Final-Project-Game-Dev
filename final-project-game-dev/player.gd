@@ -22,7 +22,9 @@ func _ready():
 
 
 func _physics_process(delta):
-	# Add the gravity.
+	if not is_visible_in_tree():
+		velocity = Vector2.ZERO
+		return
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		#coyote_frames +=1

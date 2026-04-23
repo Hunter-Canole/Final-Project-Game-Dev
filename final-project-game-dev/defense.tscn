@@ -1,12 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://3hmenitkbw25"]
+[gd_scene load_steps=14 format=3 uid="uid://3hmenitkbw25"]
 
 [ext_resource type="Script" uid="uid://bl08thffajfby" path="res://defense.gd" id="1_b1r40"]
 [ext_resource type="Texture2D" uid="uid://08g4mvu03n1k" path="res://defense.png" id="1_p2qeu"]
 [ext_resource type="Texture2D" uid="uid://17pg68pslgbd" path="res://ground.png" id="2_7088l"]
 [ext_resource type="Texture2D" uid="uid://cpmm4mrx6ra58" path="res://defense diving.png" id="4_ko58k"]
+[ext_resource type="Texture2D" uid="uid://daefvyqt0ofie" path="res://tackle1.png" id="5_feujx"]
+[ext_resource type="Texture2D" uid="uid://bewmdybqy1hsl" path="res://tackle2.png" id="6_l8iht"]
+[ext_resource type="Texture2D" uid="uid://jq044l247ucn" path="res://tackle3.png" id="7_t4un6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7088l"]
-size = Vector2(316, 392)
+size = Vector2(316, 352)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_feujx"]
 animations = [{
@@ -16,6 +19,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_t4un6")
+}],
+"loop": true,
+"name": &"divetackle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -39,6 +50,20 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_feujx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l8iht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_t4un6")
+}],
+"loop": false,
+"name": &"tackling",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8iht"]
@@ -59,12 +84,13 @@ scale = Vector2(0.25, 0.25)
 script = ExtResource("1_b1r40")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, 36)
+position = Vector2(2, 16)
 shape = SubResource("RectangleShape2D_7088l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8, 12)
 sprite_frames = SubResource("SpriteFrames_feujx")
-animation = &"dead"
+animation = &"divetackle"
 
 [node name="Hitbox_Normal" type="Area2D" parent="."]
 collision_layer = 2
