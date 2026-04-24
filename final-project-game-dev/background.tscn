@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8keqaepq6w3c"]
+
+[ext_resource type="Texture2D" uid="uid://gegxbhrr1fcw" path="res://Stands1.png" id="1_i7s6n"]
+[ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="2_xehqc"]
+
+[node name="Background" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
+offset_left = -7.0
+offset_top = 2.0
+offset_right = 334.0
+offset_bottom = 415.0
+texture = ExtResource("1_i7s6n")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+repeat_size = Vector2(540, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D2"]
+offset_left = 333.0
+offset_top = 4.0
+offset_right = 848.0
+offset_bottom = 419.0
+texture = ExtResource("2_xehqc")
