@@ -55,8 +55,8 @@ texture = ExtResource("2_dwbse")
 [node name="Parallax2D" type="Parallax2D" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="Parallax2D"]
-offset_left = -448.0
-offset_right = 333.0
+offset_left = -440.0
+offset_right = 341.0
 offset_bottom = 709.0
 texture = ExtResource("3_pkg7o")
 
@@ -71,8 +71,6 @@ position = Vector2(423, 321)
 
 [node name="Player" parent="." instance=ExtResource("1_fj7yv")]
 position = Vector2(278, 276)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(182, 241)
