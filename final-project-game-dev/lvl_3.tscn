@@ -4,3 +4,9 @@
 
 [node name="lvl_3" type="Node2D"]
 script = ExtResource("1_w005c")
+
+[node name="EnterEndzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterEndzone"]
+
+[connection signal="body_entered" from="EnterEndzone" to="." method="_on_enter_endzone_body_entered"]
