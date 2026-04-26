@@ -1,25 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8keqaepq6w3c"]
+[gd_scene load_steps=2 format=3 uid="uid://b8keqaepq6w3c"]
 
-[ext_resource type="Texture2D" uid="uid://gegxbhrr1fcw" path="res://Stands1.png" id="1_i7s6n"]
 [ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="2_xehqc"]
 
 [node name="Background" type="Node2D"]
 
-[node name="Parallax2D2" type="Parallax2D" parent="."]
-repeat_size = Vector2(540, 0)
-repeat_times = 2
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="Parallax2D2"]
-offset_left = 879.0
-offset_right = 1439.0
-offset_bottom = 421.0
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("2_xehqc")
-
-[node name="Parallax2D" type="Parallax2D" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
-offset_left = 3.0
-offset_top = 1.0
-offset_right = 344.0
-offset_bottom = 414.0
-texture = ExtResource("1_i7s6n")
+centered = false
