@@ -1,3 +1,16 @@
-[gd_scene load_steps=0 format=3 uid="uid://diao4dy1ahg3v"]
+[gd_scene load_steps=2 format=3 uid="uid://diao4dy1ahg3v"]
+
+[ext_resource type="Script" path="res://lvl_4.gd" id="1_hmyab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(100, 100)
 
 [node name="lvl_4" type="Node2D"]
+script = ExtResource("1_hmyab")
+
+[node name="EnterEndzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterEndzone"]
+shape = SubResource("RectangleShape2D_1")
+
+[connection signal="body_entered" from="EnterEndzone" to="." method="_on_enter_endzone_body_entered"]
