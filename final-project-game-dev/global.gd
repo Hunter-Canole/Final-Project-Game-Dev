@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func goto_scene(path, camera):
 	var tween = get_tree().create_tween()
-	tween.tween_property(camera, "zoom", Vector2(10, 10), 2)
+	tween.tween_property(camera, "zoom", Vector2(10, 10), 4)
 	tween.tween_callback(func(): call_deferred("_deferred_goto_scene", path))
 	
 func _deferred_goto_scene(path):
