@@ -1,4 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://dstx2enqctgd1"]
+[gd_scene load_steps=15 format=3 uid="uid://b27434urr420d"]
+>>>>>>> 98206eaf481f8a072c2c8b0e88b15b03d314369a
 
 [ext_resource type="Script" uid="uid://b13541eerfh64" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://creo2euotp1aa" path="res://player.tscn" id="1_fj7yv"]
@@ -69,12 +70,16 @@ position = Vector2(492, 662)
 
 [node name="Player" parent="." instance=ExtResource("1_fj7yv")]
 position = Vector2(260, 627)
+collision_layer = 7
+collision_mask = 7
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(248, 621)
 
 [node name="EnterEndzone" type="Area2D" parent="."]
 position = Vector2(-3, -6)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterEndzone"]
 position = Vector2(2506.5, 409)
@@ -94,4 +99,5 @@ stream = ExtResource("11_ic0uy")
 
 [connection signal="hit_player" from="JumpDefender" to="." method="_on_jump_defender_hit_player"]
 [connection signal="hit_player" from="defense" to="." method="_on_defense_hit_player"]
+[connection signal="body_entered" from="EnterEndzone" to="." method="_on_enter_endzone_body_entered"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
