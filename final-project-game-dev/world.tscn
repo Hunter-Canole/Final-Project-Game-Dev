@@ -1,13 +1,14 @@
+
 [gd_scene load_steps=15 format=3 uid="uid://b27434urr420d"]
+1b0a2f0b54ed3f0314787a583ea70907cdccda8c
 
 [ext_resource type="Script" uid="uid://b13541eerfh64" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://creo2euotp1aa" path="res://player.tscn" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="2_dwbse"]
-[ext_resource type="Texture2D" uid="uid://gegxbhrr1fcw" path="res://Stands1.png" id="3_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://3hmenitkbw25" path="res://defense.tscn" id="3_tlwt5"]
 [ext_resource type="Texture2D" uid="uid://qul5djchsngr" path="res://football_tiles2.png" id="4_dwbse"]
-[ext_resource type="PackedScene" path="res://hud.tscn" id="7_pkg7o"]
-[ext_resource type="PackedScene" path="res://jump_defender.tscn" id="8_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://ch8m8q3r5ee4i" path="res://hud.tscn" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://bda0qwuwjtlk7" path="res://jump_defender.tscn" id="8_gbfbk"]
 [ext_resource type="AudioStream" uid="uid://caxe6s3s484wl" path="res://crowd noise.mp3" id="9_ioo17"]
 [ext_resource type="AudioStream" uid="uid://opgundi4ohev" path="res://pads.mp3" id="9_wse8f"]
 [ext_resource type="AudioStream" uid="uid://dbedx0hv1sg2" path="res://whistle.mp3" id="11_ic0uy"]
@@ -43,26 +44,17 @@ size = Vector2(71, 163)
 [node name="World" type="Node2D"]
 script = ExtResource("1_aqk2v")
 
-[node name="Parallax2D_background" type="Parallax2D" parent="."]
-texture_repeat = 2
-repeat_size = Vector2(560, 0)
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="Parallax2D_background"]
-texture_repeat = 2
-custom_minimum_size = Vector2(1, 1)
-offset_left = 308.0
-offset_top = 3.0
-offset_right = 1251.0
-offset_bottom = 709.0
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(4.000061, -1)
+scale = Vector2(2.3964286, 1.5074258)
 texture = ExtResource("2_dwbse")
-
-[node name="Parallax2D" type="Parallax2D" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="Parallax2D"]
-offset_left = -440.0
-offset_right = 341.0
-offset_bottom = 709.0
-texture = ExtResource("3_pkg7o")
+centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_gbfbk")
