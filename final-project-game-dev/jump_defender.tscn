@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://bda0qwuwjtlk7"]
+
+[ext_resource type="Texture2D" uid="uid://jwdu4k5tb47s" path="res://JumpDefense.png" id="1_dnkbb"]
+[ext_resource type="Script" uid="uid://yd8cyl1x3nbl" path="res://jump_defender.gd" id="1_o8nin"]
+[ext_resource type="Texture2D" uid="uid://wfifs4evo0ro" path="res://jumpingUp.png" id="2_aaf3n"]
+[ext_resource type="Texture2D" uid="uid://daefvyqt0ofie" path="res://tackle1.png" id="4_7e0i4"]
+[ext_resource type="Texture2D" uid="uid://bewmdybqy1hsl" path="res://tackle2.png" id="5_sey4j"]
+[ext_resource type="Texture2D" uid="uid://jq044l247ucn" path="res://tackle3.png" id="6_jswr7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sk46t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dnkbb")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aaf3n")
+}],
+"loop": false,
+"name": &"Jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7e0i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sey4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jswr7")
+}],
+"loop": false,
+"name": &"tackling",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_udvku"]
+radius = 135.0
+height = 814.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dnkbb"]
+radius = 173.0
+height = 814.0
+
+[node name="JumpDefender" type="CharacterBody2D"]
+script = ExtResource("1_o8nin")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(226, -8)
+sprite_frames = SubResource("SpriteFrames_sk46t")
+animation = &"Jumping"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(242, -42)
+shape = SubResource("CapsuleShape2D_udvku")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(249, -29)
+shape = SubResource("CapsuleShape2D_dnkbb")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

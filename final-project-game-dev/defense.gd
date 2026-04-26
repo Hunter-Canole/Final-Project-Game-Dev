@@ -22,6 +22,10 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	$Hitbox_Normal/CollisionShape2D.set_deferred("disabled", true)
 	$AnimatedSprite2D.play("tackling")
 	is_tackling = false
+	$Pads.play()
+	$Pads.stop()
+	$Whistle.play()
+	$Whistle.stop()
 	hit_player.emit()
 	await get_tree().create_timer(1.0).timeout
 	idle()

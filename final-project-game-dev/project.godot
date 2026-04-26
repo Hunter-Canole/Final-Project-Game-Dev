@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Final-Project-Game-Dev"
-run/main_scene="uid://creo2euotp1aa"
+run/main_scene="res://world.tscn"
+>>>>>>> d47649aa7f132a7cca05db2b860eae1405cfc382
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://global.gd"
 
 [display]
 

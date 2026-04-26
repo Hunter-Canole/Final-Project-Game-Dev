@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var timer_delay = 0.5
 @export var MAX_INPUT_BUFFER_FRAMES = 100
 
-
+var current_speed = SPEED
 var coyote_frames = 0
 var input_buffer_frames = 0;
 var believe_in_gravity = false
@@ -25,6 +25,8 @@ func _physics_process(delta):
 	if not is_visible_in_tree():
 		velocity = Vector2.ZERO
 		return
+	if Input.is_key_pressed(KEY_SHIFT):
+		current_speed = SPEED * 1.5
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		#coyote_frames +=1
