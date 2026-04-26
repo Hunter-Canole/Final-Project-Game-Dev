@@ -15,11 +15,11 @@ func game_over() -> void:
 	
 func new_game():
 	$Player.show()
-	lives = 3
+	Global.lives = 3
 	$Player.set_physics_process(true)
 	can_be_hit = true
 	$HUD/Lives.visible = true
-	$HUD/Lives.text = "Lives: " + str(lives)
+	$HUD/Lives.text = "Lives: " + str(Global.lives)
 	$Player.position = $PlayerSpawn.position
 	get_tree().call_group("defense", "queue_free")
 	$Whistle.play()
@@ -34,10 +34,10 @@ func _on_defense_hit_player() -> void:
 		return 
 	can_be_hit = false
 	$Player.hide()
-	lives -= 1
+	Global.lives -= 1
 	$HUD/Lives.text = "Lives: " + str(Global.lives)
 	$Player.position = $PlayerSpawn.position
-	if lives <= 0:
+	if Global.lives <= 0:
 		game_over()
 	else:
 		await get_tree().create_timer(1.2).timeout
@@ -55,10 +55,10 @@ func _on_jump_defender_hit_player() -> void:
 	$Player.hide()
 	$Pads.play()
 	$Whistle.play()
-	lives -= 1
+	Global.lives -= 1
 	$HUD/Lives.text = "Lives: " + str(Global.lives)
 	$Player.position = $PlayerSpawn.position
-	if lives <= 0:
+	if Global.lives <= 0:
 		game_over()
 	else:
 		await get_tree().create_timer(1.2).timeout
