@@ -48,8 +48,7 @@ func _on_defense_hit_player() -> void:
 	$CrowdNoise.play()
 func _on_hud_start_game() -> void:
 	new_game()
-
-
+	
 func _on_jump_defender_hit_player() -> void:
 	if not can_be_hit:
 		return 

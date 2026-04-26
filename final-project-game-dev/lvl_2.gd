@@ -24,6 +24,7 @@ func start_level_immediately():
 	$CrowdNoise.play()
 	
 func new_game():
+	Global.goto_scene("res://world.tscn", $Player/Camera2D)
 	$Player.show()
 	Global.lives = 3
 	$Player.set_physics_process(true)

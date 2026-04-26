@@ -24,9 +24,9 @@ func start_level_immediately():
 	$CrowdNoise.play()
 	
 func new_game():
-	Global.goto_scene("res://world.tscn", $Player/Camera2D)
 	$Player.show()
 	Global.lives = 3
+	Global.goto_scene("res://world.tscn", $Player/Camera2D)
 	$Player.set_physics_process(true)
 	can_be_hit = true
 	$HUD/Lives.visible = true
@@ -35,6 +35,7 @@ func new_game():
 	get_tree().call_group("defense", "queue_free")
 	$Whistle.play()
 	$CrowdNoise.play()
+		
 
 
 func _on_defense_hit_player() -> void:
@@ -75,17 +76,3 @@ func _on_jump_defender_hit_player() -> void:
 		await get_tree().create_timer(1.2).timeout
 		$Player.show()
 		can_be_hit = true
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-
-func _on_enter_endzone_body_entered(body: Node2D) -> void:
-	Global.goto_scene("res://lvl_5.tscn", $Player/Camera2D)
