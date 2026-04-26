@@ -70,4 +70,8 @@ shape = SubResource("CapsuleShape2D_1jxqw")
 [node name="WileTimer" type="Timer" parent="."]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1664, 328)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Camera2D")
