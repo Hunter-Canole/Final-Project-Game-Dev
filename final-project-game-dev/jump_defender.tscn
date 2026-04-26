@@ -19,9 +19,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dnkbb")
-}, {
-"duration": 1.0,
 "texture": ExtResource("2_aaf3n")
 }],
 "loop": false,
@@ -38,14 +35,14 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_jswr7")
 }],
-"loop": true,
+"loop": false,
 "name": &"tackling",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_udvku"]
 radius = 135.0
-height = 706.0
+height = 814.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dnkbb"]
 radius = 173.0
@@ -57,7 +54,7 @@ script = ExtResource("1_o8nin")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(226, -8)
 sprite_frames = SubResource("SpriteFrames_sk46t")
-animation = &"Idle"
+animation = &"Jumping"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(242, -42)
