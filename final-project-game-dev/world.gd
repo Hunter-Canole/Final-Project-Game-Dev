@@ -22,21 +22,20 @@ func new_game():
 	$HUD/Lives.text = "Lives: " + str(lives)
 	$Player.position = $PlayerSpawn.position
 	get_tree().call_group("defense", "queue_free")
+	$Whistle.play()
 	$CrowdNoise.play()
 
 
 func _on_defense_hit_player() -> void:
 	$CrowdNoise.stop()
 	$Pads.play()
-	$Pads.stop()
 	$Whistle.play()
-	$Whistle.stop()
 	if not can_be_hit:
 		return 
 	can_be_hit = false
 	$Player.hide()
 	lives -= 1
-	$HUD/Lives.text = "Lives: " + str(lives)
+	$HUD/Lives.text = "Lives: " + str(Global.lives)
 	$Player.position = $PlayerSpawn.position
 	if lives <= 0:
 		game_over()
@@ -54,8 +53,10 @@ func _on_jump_defender_hit_player() -> void:
 		return 
 	can_be_hit = false
 	$Player.hide()
+	$Pads.play()
+	$Whistle.play()
 	lives -= 1
-	$HUD/Lives.text = "Lives: " + str(lives)
+	$HUD/Lives.text = "Lives: " + str(Global.lives)
 	$Player.position = $PlayerSpawn.position
 	if lives <= 0:
 		game_over()
