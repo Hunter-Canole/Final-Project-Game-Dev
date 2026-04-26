@@ -5,21 +5,21 @@
 
 [node name="Background" type="Node2D"]
 
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+repeat_size = Vector2(540, 0)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D2"]
+offset_left = 879.0
+offset_right = 1439.0
+offset_bottom = 421.0
+texture = ExtResource("2_xehqc")
+
 [node name="Parallax2D" type="Parallax2D" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="Parallax2D"]
-offset_left = -7.0
-offset_top = 2.0
-offset_right = 334.0
-offset_bottom = 415.0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 344.0
+offset_bottom = 414.0
 texture = ExtResource("1_i7s6n")
-
-[node name="Parallax2D2" type="Parallax2D" parent="."]
-repeat_size = Vector2(540, 0)
-
-[node name="TextureRect" type="TextureRect" parent="Parallax2D2"]
-offset_left = 333.0
-offset_top = 4.0
-offset_right = 848.0
-offset_bottom = 419.0
-texture = ExtResource("2_xehqc")
