@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://caxe6s3s484wl"
+path="res://.godot/imported/crowd noise.mp3-fa9d462784e6df1ae36557c866311416.mp3str"
+
+[deps]
+
+source_file="res://crowd noise.mp3"
+dest_files=["res://.godot/imported/crowd noise.mp3-fa9d462784e6df1ae36557c866311416.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
