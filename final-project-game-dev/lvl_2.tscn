@@ -5,14 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="2_tmnqu"]
 [ext_resource type="PackedScene" uid="uid://creo2euotp1aa" path="res://player.tscn" id="3_tmnqu"]
 [ext_resource type="PackedScene" uid="uid://3hmenitkbw25" path="res://defense.tscn" id="4_vbeg1"]
-[ext_resource type="PackedScene" path="res://jump_defender.tscn" id="5_22vjt"]
-[ext_resource type="PackedScene" path="res://hud.tscn" id="6_t0ydl"]
+[ext_resource type="PackedScene" uid="uid://bda0qwuwjtlk7" path="res://jump_defender.tscn" id="5_22vjt"]
+[ext_resource type="PackedScene" uid="uid://ch8m8q3r5ee4i" path="res://hud.tscn" id="6_t0ydl"]
 [ext_resource type="AudioStream" uid="uid://opgundi4ohev" path="res://pads.mp3" id="7_e03lu"]
 [ext_resource type="AudioStream" uid="uid://dbedx0hv1sg2" path="res://whistle.mp3" id="8_0a5a2"]
 [ext_resource type="AudioStream" uid="uid://caxe6s3s484wl" path="res://crowd noise.mp3" id="9_q11op"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_beans"]
-size = Vector2(76, 210)
 
 [node name="lvl_2" type="Node2D"]
 script = ExtResource("1_beans")
@@ -62,12 +59,8 @@ position = Vector2(2073, 641)
 
 [node name="defense3" parent="." instance=ExtResource("4_vbeg1")]
 position = Vector2(1346, 175)
-4
-[node name="defense4" parent="." instance=ExtResource("4_vbeg1")]
-position = Vector2(1219, 541)
 
 [connection signal="hit_player" from="defense" to="." method="_on_defense_hit_player"]
 [connection signal="hit_player" from="JumpDefender" to="." method="_on_jump_defender_hit_player"]
 [connection signal="hit_player" from="defense2" to="." method="_on_defense_hit_player"]
 [connection signal="hit_player" from="defense3" to="." method="_on_defense_hit_player"]
-[connection signal="hit_player" from="defense4" to="." method="_on_defense_hit_player"]

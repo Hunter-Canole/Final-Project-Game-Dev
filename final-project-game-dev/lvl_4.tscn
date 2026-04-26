@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://diao4dy1ahg3v"]
+[gd_scene load_steps=4 format=3 uid="uid://da4o1v7x8bifq"]
 
-[ext_resource type="Script" path="res://lvl_4.gd" id="1_hmyab"]
+[ext_resource type="Script" uid="uid://ch6261psbrkq3" path="res://lvl_4.gd" id="1_hmyab"]
 [ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="2_sggpl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
@@ -17,6 +17,8 @@ shape = SubResource("RectangleShape2D_1")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(560, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource("2_sggpl")

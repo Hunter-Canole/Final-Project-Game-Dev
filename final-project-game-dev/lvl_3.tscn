@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce7hrbmnab4ga"]
+[gd_scene load_steps=3 format=3 uid="uid://nm667wf1e0g0"]
 
 [ext_resource type="Script" uid="uid://dqcooyaunrrta" path="res://lvl_3.gd" id="1_w005c"]
+[ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="2_lyj2s"]
 
 [node name="lvl_3" type="Node2D"]
 script = ExtResource("1_w005c")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("2_lyj2s")
+centered = false
 
 [node name="EnterEndzone" type="Area2D" parent="."]
 
