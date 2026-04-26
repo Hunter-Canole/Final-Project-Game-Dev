@@ -68,6 +68,17 @@ func _on_jump_defender_hit_player() -> void:
 		can_be_hit = true
 
 
-
+func _on_kill_plane_body_entered(body: Node2D) -> void:
+	$Whistle.play()
+	Global.lives -= 1
+	$HUD/Lives.text = "Lives: " + str(Global.lives)
+	$Player.position = $PlayerSpawn.position
+	if Global.lives <= 0:
+		game_over()
+	else:
+		await get_tree().create_timer(1.2).timeout
+		$Player.show()
+		can_be_hit = true
+		
 func _on_enter_endzone_body_entered(body: Node2D) -> void:
 	Global.goto_scene("res://lvl_2.tscn", $Player/Camera2D)
