@@ -124,7 +124,7 @@ position = Vector2(1373, 970)
 shape = SubResource("RectangleShape2D_ic0uy")
 
 [node name="defense2" parent="." instance=ExtResource("3_tlwt5")]
-position = Vector2(800, 564)
+position = Vector2(803, 511)
 
 [node name="defense3" parent="." instance=ExtResource("3_tlwt5")]
 position = Vector2(2285, 432)
