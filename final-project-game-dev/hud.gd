@@ -22,6 +22,14 @@ func show_game_over():
 	await get_tree().create_timer(1.0).timeout
 	$StartButton.show()
 	
+func show_you_win():
+	show_message("You Win")
+	await $MessageTimer.timeout
+	
+	$Message.text = "Cool Football Game"
+	$Message.show()
+	await get_tree().create_timer(1.0).timeout
+	$StartButton.show()
 
 
 func _on_start_button_pressed() -> void:
