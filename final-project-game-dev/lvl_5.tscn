@@ -61,7 +61,7 @@ position = Vector2(1651, 250)
 position = Vector2(1605, 289)
 
 [node name="defense4" parent="." instance=ExtResource("5_80jhk")]
-position = Vector2(1542, 318)
+position = Vector2(1563, 317)
 
 [node name="JumpDefender2" parent="." instance=ExtResource("5_33ycm")]
 position = Vector2(1278, 208)
@@ -136,4 +136,5 @@ shape = SubResource("RectangleShape2D_10k7t")
 [connection signal="hit_player" from="defense5" to="." method="_on_defense_hit_player"]
 [connection signal="hit_player" from="defense7" to="." method="_on_defense_hit_player"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="body_entered" from="KillPlane" to="." method="_on_kill_plane_body_entered"]
 [connection signal="body_entered" from="EnterEndzone" to="." method="_on_enter_endzone_body_entered"]
