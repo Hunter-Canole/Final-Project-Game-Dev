@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY = -550.0
 @export var MAX_COYOTE_FRAMES = 100.0
 @export var timer_delay = 0.5
-@export var MAX_INPUT_BUFFER_FRAMES = 100
+@export var MAX_INPUT_BUFFER_FRAMES = 10  
 
 var current_speed = SPEED
 var coyote_frames = 0
