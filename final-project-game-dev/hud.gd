@@ -16,7 +16,6 @@ func show_message(text):
 func show_game_over():
 	show_message("You Lost")
 	await $MessageTimer.timeout
-	
 	$Message.text = "Cool Football Game"
 	$Message.show()
 	await get_tree().create_timer(1.0).timeout
