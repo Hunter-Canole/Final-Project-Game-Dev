@@ -15,7 +15,7 @@
 size = Vector2(135.5, 811)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbeg1"]
-size = Vector2(69.5, 205)
+size = Vector2(92.75, 172.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22vjt"]
 size = Vector2(4488, 20)
@@ -40,7 +40,7 @@ layer_0/tile_data = PackedInt32Array(786432, 0, 1, 786433, 65536, 1, 786434, 0, 
 layer_1/name = "Layer1"
 
 [node name="defense" parent="." instance=ExtResource("4_vbeg1")]
-position = Vector2(798, 462)
+position = Vector2(773, 462)
 
 [node name="JumpDefender" parent="." instance=ExtResource("5_22vjt")]
 position = Vector2(1698, 443)
@@ -89,7 +89,7 @@ shape = SubResource("RectangleShape2D_tmnqu")
 [node name="EnterEndzone2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterEndzone2"]
-position = Vector2(2255, 607)
+position = Vector2(2238.625, 611)
 shape = SubResource("RectangleShape2D_vbeg1")
 
 [node name="KillPlane" type="Area2D" parent="."]
