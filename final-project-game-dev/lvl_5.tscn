@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://df0yem43bj6qi" path="res://lvl_5.gd" id="1_f6r2k"]
 [ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="2_h0m0d"]
-[ext_resource type="PackedScene" uid="uid://csv1fqhmsgc8a" path="res://tile_map.tscn" id="3_yfixo"]
+[ext_resource type="PackedScene" path="res://tile_map.tscn" id="3_yfixo"]
 [ext_resource type="PackedScene" uid="uid://creo2euotp1aa" path="res://player.tscn" id="4_3p4g5"]
 [ext_resource type="PackedScene" uid="uid://bda0qwuwjtlk7" path="res://jump_defender.tscn" id="5_33ycm"]
 [ext_resource type="PackedScene" uid="uid://3hmenitkbw25" path="res://defense.tscn" id="5_80jhk"]
@@ -29,6 +29,8 @@ motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(560, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-49.999996, 0)
+scale = Vector2(4.0321426, 1.0544554)
 texture = ExtResource("2_h0m0d")
 centered = false
 
