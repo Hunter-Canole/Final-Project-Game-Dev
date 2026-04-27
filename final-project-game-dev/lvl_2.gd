@@ -76,5 +76,6 @@ func _on_jump_defender_hit_player() -> void:
 		$Player.show()
 		can_be_hit = true
 
-func _on_enter_endzone_body_entered(body: Node2D) -> void:
+
+func _on_enter_endzone_2_body_entered(body: Node2D) -> void:
 	Global.goto_scene("res://lvl_3.tscn", $Player/Camera2D)
