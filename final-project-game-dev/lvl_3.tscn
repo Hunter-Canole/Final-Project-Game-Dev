@@ -27,6 +27,8 @@ centered = false
 
 [node name="EnterEndzone3" type="Area2D" parent="."]
 position = Vector2(4132, 309)
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterEndzone3"]
 position = Vector2(32.5, 21)
@@ -73,6 +75,7 @@ stream = ExtResource("8_dc44f")
 
 [node name="CrowdNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_dc44f")
+parameters/looping = true
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(87, 220)
