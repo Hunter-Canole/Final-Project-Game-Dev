@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ce7hrbmnab4ga"]
+[gd_scene load_steps=7 format=3 uid="uid://ce7hrbmnab4ga"]
 
 [ext_resource type="Script" uid="uid://dqcooyaunrrta" path="res://lvl_3.gd" id="1_w005c"]
 [ext_resource type="Texture2D" uid="uid://qubmlbyqrdig" path="res://Stands2.png" id="2_lyj2s"]
@@ -6,11 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://3hmenitkbw25" path="res://defense.tscn" id="4_rno80"]
 [ext_resource type="PackedScene" uid="uid://bda0qwuwjtlk7" path="res://jump_defender.tscn" id="5_31vo8"]
 [ext_resource type="PackedScene" uid="uid://creo2euotp1aa" path="res://player.tscn" id="6_dc44f"]
-[ext_resource type="PackedScene" uid="uid://ch8m8q3r5ee4i" path="res://hud.tscn" id="7_31vo8"]
-[ext_resource type="AudioStream" uid="uid://caxe6s3s484wl" path="res://crowd noise.mp3" id="8_dc44f"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_31vo8"]
-size = Vector2(109, 62)
 
 [node name="lvl_3" type="Node2D"]
 script = ExtResource("1_w005c")
@@ -26,30 +21,27 @@ texture = ExtResource("2_lyj2s")
 centered = false
 
 [node name="EnterEndzone" type="Area2D" parent="."]
-position = Vector2(4132, 309)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterEndzone"]
-position = Vector2(32.5, 21)
-shape = SubResource("RectangleShape2D_31vo8")
 
 [node name="TileMap" parent="." instance=ExtResource("3_urlp7")]
-layer_0/tile_data = PackedInt32Array(327680, 0, 1, 327681, 65536, 1, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327712, 0, 0, 327713, 0, 0, 131107, 0, 0, 131108, 0, 0, 131109, 0, 0, 131110, 0, 0, 65575, 0, 3, 40, 0, 3, -65495, 0, 3, -131030, 0, 3, 327730, 0, 0, 327729, 0, 0, 327728, 0, 0, 327725, 0, 0, 327727, 0, 0, 327726, 0, 0, 327731, 0, 0, 327733, 0, 0, 327732, 0, 0, 196627, 0, 0, 196626, 0, 0, 196625, 0, 0, 65558, 0, 0, 65559, 0, 0, 65560, 0, 0, 65561, 0, 0, 196636, 0, 0, 196637, 0, 0, 327738, 0, 0, 327739, 0, 0, 327740, 0, 0, 327741, 0, 0, 327742, 0, 0, 327743, 0, 0, 327744, 0, 2, 327745, 65536, 2)
+layer_0/tile_data = PackedInt32Array(327680, 0, 1, 327681, 65536, 1, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 131102, 0, 0, 131103, 0, 0, 327712, 0, 0, 327713, 0, 0, 131107, 0, 0, 131108, 0, 0, 131109, 0, 0, 131110, 0, 0, 65575, 0, 3, 40, 0, 3, -65495, 0, 3, -131030, 0, 3, 327730, 0, 0, 327729, 0, 0, 327728, 0, 0, 327725, 0, 0, 327727, 0, 0, 327726, 0, 0, 327731, 0, 0, 327733, 0, 0, 327732, 0, 0)
 
 [node name="defense" parent="." instance=ExtResource("4_rno80")]
-position = Vector2(716, 301)
+position = Vector2(749, 299)
 
 [node name="defense2" parent="." instance=ExtResource("4_rno80")]
-position = Vector2(1530, 18)
+position = Vector2(1490, -118)
 
 [node name="defense3" parent="." instance=ExtResource("4_rno80")]
-position = Vector2(1431, 317)
+position = Vector2(1507, 310)
 
 [node name="JumpDefender" parent="." instance=ExtResource("5_31vo8")]
 position = Vector2(2061, 261)
 scale = Vector2(0.25, 0.25)
 
 [node name="defense4" parent="." instance=ExtResource("4_rno80")]
-position = Vector2(2391, 114)
+position = Vector2(2347, 115)
 
 [node name="defense5" parent="." instance=ExtResource("4_rno80")]
 position = Vector2(2992, 290)
@@ -58,24 +50,10 @@ position = Vector2(2992, 290)
 position = Vector2(3162, 284)
 
 [node name="defense7" parent="." instance=ExtResource("4_rno80")]
-position = Vector2(3869, 274)
+position = Vector2(3350, 278)
 
 [node name="Player" parent="." instance=ExtResource("6_dc44f")]
 position = Vector2(101, 254)
-
-[node name="HUD" parent="." instance=ExtResource("7_31vo8")]
-
-[node name="Whistle" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_dc44f")
-
-[node name="Pads" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_dc44f")
-
-[node name="CrowdNoise" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_dc44f")
-
-[node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(87, 220)
 
 [connection signal="body_entered" from="EnterEndzone" to="." method="_on_enter_endzone_body_entered"]
 [connection signal="hit_player" from="defense" to="." method="_on_defense_hit_player"]

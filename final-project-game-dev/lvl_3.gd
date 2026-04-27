@@ -4,6 +4,7 @@ var lives
 var can_be_hit = true
 func _ready() -> void:
 	start_level_immediately()
+	
 func _process(delta: float) -> void:
 	pass
 func game_over() -> void:
@@ -75,16 +76,6 @@ func _on_jump_defender_hit_player() -> void:
 		await get_tree().create_timer(1.2).timeout
 		$Player.show()
 		can_be_hit = true
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 
 func _on_enter_endzone_body_entered(body: Node2D) -> void:
