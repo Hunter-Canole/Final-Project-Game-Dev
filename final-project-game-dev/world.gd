@@ -80,4 +80,7 @@ func _on_kill_plane_body_entered(body: Node2D) -> void:
 		can_be_hit = true
 		
 func _on_enter_endzone_body_entered(body: Node2D) -> void:
+	$Player.set_physics_process(false)
+	$Player/AnimatedSprite2D.play("Heisman")
+
 	Global.goto_scene("res://lvl_2.tscn", $Player/Camera2D)

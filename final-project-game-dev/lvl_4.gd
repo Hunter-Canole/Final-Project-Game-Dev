@@ -88,4 +88,7 @@ func _on_jump_defender_hit_player() -> void:
 		can_be_hit = true
 
 func _on_enter_endzone_4_body_entered(body: Node2D) -> void:
+	$Player.set_physics_process(false)
+	$Player/AnimatedSprite2D.play("Heisman")
+	
 	Global.goto_scene("res://lvl_5.tscn", $Player/Camera2D)

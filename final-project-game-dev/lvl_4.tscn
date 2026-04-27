@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://3hmenitkbw25" path="res://defense.tscn" id="3_o7vtu"]
 [ext_resource type="PackedScene" uid="uid://bda0qwuwjtlk7" path="res://jump_defender.tscn" id="4_emw0k"]
 [ext_resource type="PackedScene" uid="uid://csv1fqhmsgc8a" path="res://tile_map.tscn" id="5_ufpfk"]
-[ext_resource type="PackedScene" path="res://tile_map.tscn" id="5_ufpfk"]
 [ext_resource type="AudioStream" uid="uid://dbedx0hv1sg2" path="res://whistle.mp3" id="7_ufpfk"]
 [ext_resource type="AudioStream" uid="uid://caxe6s3s484wl" path="res://crowd noise.mp3" id="8_i37vr"]
 [ext_resource type="AudioStream" uid="uid://opgundi4ohev" path="res://pads.mp3" id="9_eidr8"]

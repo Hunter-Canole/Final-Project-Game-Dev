@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://creo2euotp1aa"]
+[gd_scene load_steps=10 format=3 uid="uid://creo2euotp1aa"]
 
 [ext_resource type="Script" uid="uid://dk320ldi5ywc4" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://jfbjqhb6m8fw" path="res://football_player-removebg-preview.png" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cbqfjoauhrrtb" path="res://heisman.png" id="2_hqtel"]
 [ext_resource type="Texture2D" uid="uid://boj34rc34eqvl" path="res://running.png" id="2_i3pqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
@@ -18,6 +19,14 @@ region = Rect2(124, 0, 124, 335)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sweqy"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hqtel")
+}],
+"loop": false,
+"name": &"Heisman",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sweqy")
@@ -60,11 +69,10 @@ script = ExtResource("1_i3pqv")
 position = Vector2(-99, 8)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_sweqy")
-animation = &"Run"
-frame_progress = 0.291764
+animation = &"Heisman"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-92, 28)
+position = Vector2(-92, -24)
 shape = SubResource("CapsuleShape2D_1jxqw")
 
 [node name="WileTimer" type="Timer" parent="."]

@@ -60,7 +60,6 @@ func _physics_process(delta):
 		$AnimatedSprite2D.flip_h = direction < 0
 	else:
 		$AnimatedSprite2D.play("Idle")
-
 	move_and_slide()
 
 func ow():
